@@ -6,7 +6,7 @@ metadata:
     app: test-pod
 spec:
   containers:
-    - name: test-pod
+    - name: test-pod-0
       image: busybox
       imagePullPolicy: IfNotPresent
   restartPolicy: Always
