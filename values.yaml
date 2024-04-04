@@ -10,8 +10,7 @@ nginx:
     maxUnavailable: 0
   image:
     repository: hika1282/nginx-image
-    tag: latest
-    pullPolicy: Always
+    pullPolicy: IfNotPresent
   resources:
     limits:
       cpu: 250m
