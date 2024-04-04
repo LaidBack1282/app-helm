@@ -19,7 +19,7 @@ spec:
         app: nginx-app
     spec:
       containers:
-      - image: {{ .Values.nginx.image.repository }}:{{ .Values.nginx.image.tag }}
+      - image: {{ .Values.nginx.image.repository }}:{{ .Values.image.tag }}
         name: nginx-app
         imagePullPolicy: {{ .Values.nginx.image.pullPolicy }}
         livenessProbe:
