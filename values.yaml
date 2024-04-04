@@ -4,7 +4,7 @@
 nginx:
   name: nginx-app
   namespace: app
-  replicaCount: 2
+  replicaCount: 1
   strategy:
     maxSurge: 2
     maxUnavailable: 0
@@ -32,7 +32,7 @@ nginx:
 apache:
   name: apache-app
   namespace: app
-  replicaCount: 2
+  replicaCount: 1
   strategy:
     maxSurge: 2
     maxUnavailable: 0
