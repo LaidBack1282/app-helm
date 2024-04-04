@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Values.nginx.cm_html_pages.name }}
+data:
+  index.html: |
+    {{ .Files.Get .Values.nginx.cm_html_pages.path | quote }}

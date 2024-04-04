@@ -1,0 +1,50 @@
+# values.yaml
+
+# nginx deployment values
+nginx:
+  name: nginx-app
+  namespace: app
+  replicaCount: 1
+  strategy:
+    maxSurge: 2
+    maxUnavailable: 0
+  image:
+    repository: hika1282/nginx-image
+    tag: latest
+    pullPolicy: Always
+  resources:
+    limits:
+      cpu: 250m
+      memory: 128Mi
+    requests:
+      cpu: 250m
+      memory: 64Mi
+  secret_nginx_config:
+    name: secret-nginx-config
+    path: "configs/nginx.conf"
+  secret_nginx_website_config:
+    name: secret-nginx-site-config
+    path: "configs/index.html"
+  cm_html_pages:
+    name: cm-nginx-html-site
+    path: "configs/web.conf"
+
+# apache deployment values
+apache:
+  name: apache-app
+  namespace: app
+  replicaCount: 1
+  strategy:
+    maxSurge: 2
+    maxUnavailable: 0
+  image:
+    repository: hika1282/apache-image
+    tag: latest
+    pullPolicy: Always
+  resources:
+    limits:
+      cpu: 2500m
+      memory: 128Mi
+    requests:
+      cpu: 250m
+      memory: 64Mi
